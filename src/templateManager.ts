@@ -14,7 +14,15 @@ export function copyTemplate(templateType: string, destDir: string) {
     fs.mkdirSync(destDir, { recursive: true }); // Hedef dizini oluştur
     
     // Şablon dizinindeki tüm öğeleri listele
-    fs.readdirSync(templateDir).forEach(item => {
+    const items = fs.readdirSync(templateDir);
+    
+    // Eğer dizin boşsa, bir şey yok demek
+    if (items.length === 0) {
+      console.log(`Template ${templateType} is empty, nothing to copy.`);
+      return;
+    }
+
+    items.forEach(item => {
       const srcItem = path.join(templateDir, item);
       const destItem = path.join(destDir, item);
 

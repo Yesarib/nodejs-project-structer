@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { createProjectStructure } from '../src/createProject';
+import { createProjectStructure } from '../createProject';
 
 const program = new Command();
 
