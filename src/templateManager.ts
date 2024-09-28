@@ -12,10 +12,10 @@ export function copyTemplate(templateType: string, destDir: string) {
   // Şablon dizini mevcutsa
   if (fs.existsSync(templateDir)) {
     fs.mkdirSync(destDir, { recursive: true }); // Hedef dizini oluştur
-    
+
     // Şablon dizinindeki tüm öğeleri listele
     const items = fs.readdirSync(templateDir);
-    
+
     // Eğer dizin boşsa, bir şey yok demek
     if (items.length === 0) {
       console.log(`Template ${templateType} is empty, nothing to copy.`);
@@ -30,11 +30,11 @@ export function copyTemplate(templateType: string, destDir: string) {
       const stat = fs.statSync(srcItem);
 
       if (stat.isDirectory()) {
-        fs.mkdirSync(destItem, { recursive: true }); // Dizini oluştur
+        fs.cpSync(srcItem, destItem, { recursive: true }); // Dizini oluştur
         copyTemplate(path.join(templateType, item), destItem); // Rekurzif olarak devam et
       } else if (stat.isFile()) {
         // Eğer bir dosyaysa kopyala
-        fs.copyFileSync(srcItem, destItem);
+        fs.cpSync(srcItem, destItem, { recursive: true });
       }
     });
 

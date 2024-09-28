@@ -10,10 +10,10 @@ import { execSync } from 'child_process';
 export function createProjectStructure(type: string,name:string) {
   const baseDir = path.join(process.cwd(), name); // Proje dizini
   const templateDir = path.join(__dirname, '../templates', `${type}-template`); // Şablon dizini
-  console.log("Template dir", templateDir);
+
   
   // Hedef dizin, şablon dizininin altına düşüyor mu kontrol et
-  if (baseDir.startsWith(templateDir)) {
+  if (baseDir.includes(templateDir)) {
     console.error("Project cannot be created inside the template directory.");
     return;
   }
