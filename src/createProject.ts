@@ -1,18 +1,17 @@
 import path from 'path';
 import fs from 'fs';
 import { copyTemplate } from './templateManager';
-import { execSync } from 'child_process';
+import { execNpm } from './utils/init';
 
 /**
- * Proje yapısını oluşturur.
- * @param type - Oluşturulacak proje türü.
+ * Creates the project structure.
+ * @param type - Type of project to be created.
+ * @param name - Project name to be created.
  */
 export function createProjectStructure(type: string,name:string) {
-  const baseDir = path.join(process.cwd(), name); // Proje dizini
-  const templateDir = path.join(__dirname, '../templates', `${type}-template`); // Şablon dizini
+  const baseDir = path.join(process.cwd(), name); // Project folder
+  const templateDir = path.join(__dirname, '../templates', `${type}-template`); // Templates folders
 
-  
-  // Hedef dizin, şablon dizininin altına düşüyor mu kontrol et
   if (baseDir.includes(templateDir)) {
     console.error("Project cannot be created inside the template directory.");
     return;
@@ -20,11 +19,10 @@ export function createProjectStructure(type: string,name:string) {
   
   if (!fs.existsSync(baseDir)) {
     if (fs.existsSync(templateDir)) {
-      copyTemplate(type, baseDir); // Şablonu kopyala
+      copyTemplate(type, baseDir);
       
-      // Şablon kopyalandıktan sonra npm init -y komutunu çalıştır
       console.log('Initializing npm project in the new directory...');
-      execSync('npm init -y', { cwd: baseDir, stdio: 'inherit' }); // Yeni dizinde npm init -y çalıştır
+      execNpm(type,baseDir)
 
       console.log(`Project structure created successfully at ${baseDir}`);
     } else {

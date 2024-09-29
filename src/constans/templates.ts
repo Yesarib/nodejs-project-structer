@@ -1,0 +1,1 @@
+export const supportedTemplates = ['js-base', 'ts-base'];
