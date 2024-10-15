@@ -110,6 +110,7 @@
   "exclude": [
     "node_modules",
     "dist",  // Exclude the dist folder from compilation
-    "templates"
+    "templates",
+    "demo"
   ]
 }

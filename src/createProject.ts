@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import { copyTemplate } from './templateManager';
-import { execNpm } from './utils/init';
+import { installInit } from './utils/init';
 
 /**
  * Creates the project structure.
@@ -22,8 +22,7 @@ export function createProjectStructure(type: string,name:string) {
       copyTemplate(type, baseDir);
       
       console.log('Initializing npm project in the new directory...');
-      execNpm(type,baseDir)
-
+      installInit(type,baseDir)
       console.log(`Project structure created successfully at ${baseDir}`);
     } else {
       console.error(`Template directory ${templateDir} not found.`);
