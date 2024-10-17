@@ -1,1 +1,1 @@
-export const supportedTemplates = ['js-base', 'ts-base'];
+export const supportedTemplates = ['js-base', 'js-DDD', 'js-EventDriven', 'js-Hexagonal', 'js-microservices', 'ts-base', 'ts-DDD','ts-EventDriven', 'ts-Hexagonal','ts-microservices' ];

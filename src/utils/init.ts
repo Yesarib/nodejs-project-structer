@@ -3,7 +3,11 @@ import { createConfigFiles } from "./initConfigFiles";
 import { initExpress } from "./initExpress";
 
 export function installInit(type: string, baseDir: string) {
-    installDependencies(type,baseDir)
+    installDependencies(type, baseDir)
     createConfigFiles(baseDir);
-    initExpress(type,baseDir)
+    console.log(type);
+
+    if (type === 'ts-base' || type === 'js-base') {
+        initExpress(type, baseDir)
+    }
 }
