@@ -1,8 +1,12 @@
 {
   "name": "@yesari/nodestruct",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A CLI tool to create project structure based on selected architecture.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yesarib/nodejs-project-structer.git"
+  },
   "scripts": {
     "start": "npx tsc && npm link",
     "build": "tsc && npm run copy-templates && npm link",
@@ -22,5 +26,19 @@
     "commander": "^12.1.0",
     "inquirer": "^11.0.2"
   },
-  "keywords": ["cli", "project-structure", "nodejs"]
+  "keywords": [
+    "CLI",
+    "project",
+    "structure",
+    "architecture",
+    "nodejs",
+    "base",
+    "hexagonal",
+    "DDD",
+    "microservice",
+    "eventdriven"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
