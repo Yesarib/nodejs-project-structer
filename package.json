@@ -1,6 +1,6 @@
 {
   "name": "@yesari/nodestruct",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A CLI tool to create project structure based on selected architecture.",
   "main": "index.js",
   "repository": {
@@ -37,8 +37,5 @@
     "DDD",
     "microservice",
     "eventdriven"
-  ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  ]
 }

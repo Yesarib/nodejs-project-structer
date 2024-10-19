@@ -2,7 +2,7 @@
 
 ## Description
 
-This project provides a structured template for building Node.js applications. It is designed to help developers organize their project codebase effectively by following a modular architecture.
+This project provides a structured template for building scalable Node.js applications. It follows a modular architecture, promoting code reusability and maintainability. Developers can choose from various templates, each designed for different architectural patterns such as DDD, Event-Driven, and Microservices.
 
 ## Installation
 
@@ -21,20 +21,21 @@ npx node-structer create [template] [project-name]
 ```
 
 ### Available Templates:
+Each template offers a unique architectural design:
 
-- js-base
-- js-DDD
-- js-EventDriven
-- js-Hexagonal
-- js-microservices
-- ts-base
-- ts-DDD
-- ts-EventDriven
-- ts-Hexagonal
-- ts-microservices
+- js-base: A simple, minimal JavaScript structure.
+- js-DDD: Domain-Driven Design in JavaScript.
+- js-EventDriven: Event-Driven architecture for JS apps.
+- js-Hexagonal: Follows Hexagonal architecture principles.
+- js-microservices: Microservice-based structure for JS.
+- ts-base: Basic TypeScript structure.
+- ts-DDD: Domain-Driven Design using TypeScript.
+- ts-EventDriven: Event-Driven pattern for TS.
+- ts-Hexagonal: Hexagonal architecture in TypeScript.
+- ts-microservices: Microservice setup with TS.
 
 ### Example:
-
+To create a new project using the JavaScript base template:
 ```
 npx node-structer create js-base demo
 ```
